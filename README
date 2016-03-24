@@ -1,0 +1,33 @@
+Assumtions:
+	- The input redirection indicator (<) and input file are always the last command lines arguement(s)
+	- There are spaces surrounding the redirection indicator (eg. "cpusim -d -v < file.txt"
+	  rather than "cpusim -d -v <file.txt")
+	- There are no comments in the input files
+	- The time quantum value is seperated from the -r flag by a space (eg "cpusim -r 100 < file.txt")
+	- All command line arguements are seperated by spaces
+
+How to Run:
+    - cd to the 'main' directory within the project folder
+    - once in main type 'make simcpu'
+    - ignore any warnings
+    - type './simcpu'  and add any flags, files etc.
+
+    EX.  ./simcpu -d -v -r 20 < testfile.txt
+
+
+Questions:
+
+NOTE: I explain my algorithm through the main function in simcpu.c
+
+	1. My simulator does account for a process switch for the first ready to running 
+transition.  In reality the first state transition does not take as long as all others beacuse
+you only have to update the context CPU, not store the old CPU context, then update,
+like usually required.  So I included it because in reality it would take time to do that first
+switch.
+
+	2. Yes, the CPU still has to load the new context information which takes time.
+
+	3. No, the CPU only accounts for a context switch when it brings in a new thread to 
+begin execution of its CPU burst.
+
+	4. No
