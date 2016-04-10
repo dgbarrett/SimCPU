@@ -10,8 +10,6 @@ Building
 
 - cd to the 'main' directory within the project folder  
 - once in main type 'make simcpu'
-- ignore any warnings (TODO)
-
 
 
 Usage
