@@ -32,13 +32,13 @@ An input file has the format:
 
 *******************************************************************************
 
-num_of_processes thread_switch_overhead_time process_switch_overhead_time
+num_of_processes     thread_switch_overhead_time     process_switch_overhead_time
 
-process_number num_of_threads
+process_number     num_of_threads
 
-thread_number arrival_time num_CPU_bursts
-1 cpu_time io_time
-2 cpu_time io_time # these are CPU bursts
+thread_number     arrival_time     num_CPU_bursts
+1 cpu_time   io_time
+2 cpu_time   io_time # these are CPU bursts in a thread
 
 ...
 
